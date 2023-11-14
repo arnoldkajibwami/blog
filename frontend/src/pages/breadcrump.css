@@ -1,0 +1,78 @@
+
+.breadcrumbHome:hover {
+    cursor: pointer;
+    color: white;
+  }
+  
+  .breadcrumbHome {
+    text-decoration: none !important;
+  }
+  
+  .breadcrumbs {
+    padding: 120px 0 0px 0;
+    min-height: 40vh;
+    position: relative;
+    background-image: url("../../src/images/blog.jpg"), linear-gradient(#4b4b4b, #776d6d);
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+  
+  .breadcrumbs:before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    inset: 0;
+  }
+  
+  .breadcrumbsall {
+    transform: translateY(15px);
+  }
+  
+  .breadcrumbs h2 {
+    font-size: 46px;
+    font-weight: 500;
+    color: #fff;
+  }
+  
+  .breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0 0 10px 0;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .breadcrumbs ol a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: 0.3s;
+  }
+  
+  .breadcrumbs ol a:hover {
+    text-decoration: underline;
+  }
+  
+  .breadcrumbs ol li+li {
+    padding-left: 10px;
+  }
+  
+  .breadcrumbs ol li+li::before {
+    display: inline-block;
+    padding-right: 10px;
+    color: #fff;
+    content: "/";
+  }
+  
+  
+  .pageli{
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+  }
+
+  .pageli:hover{
+    color:white !important;
+  }
