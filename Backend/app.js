@@ -79,6 +79,10 @@ app.use('/api', postRoute);
 
 __dirname = path.resolve()
 
+app.get('/', (req, res) => {
+  res.send('API is running....')
+})
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '/frontend/build')))
 
