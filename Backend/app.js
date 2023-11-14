@@ -80,7 +80,7 @@ app.use('/api', postRoute);
 __dirname = path.resolve()
 
 app.get('/', (req, res) => {
-  res.send('API is running....')
+  res.send(res)
 })
 
 // if (process.env.NODE_ENV === 'production') {
