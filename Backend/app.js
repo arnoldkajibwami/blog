@@ -10,7 +10,7 @@ const path = require('path');
 const mongoSanitize = require('express-mongo-sanitize');
 const helmet = require('helmet');
 const xss = require("xss-clean");
-const rateLimit = require('express-rate-limit')
+// const rateLimit = require('express-rate-limit')
 const hpp = require('hpp');
 
 
@@ -84,10 +84,10 @@ __dirname = path.resolve()
 // })
 
 if (process.env.NODE_ENV === 'production') {
-  // app.use(express.static(path.join(__dirname, '../frontend/build')))
+  app.use(express.static(path.join(__dirname, '/backend/build')))
 
   app.get('*', (req, res) =>
-    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+    res.sendFile(path.resolve(__dirname, 'backend', 'build', 'app.js'))
   )
 } else {
   app.get('/', (req, res) => {
