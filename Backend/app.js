@@ -9,9 +9,9 @@ var cookieParser = require("cookie-parser")
 const path = require('path');
 const mongoSanitize = require('express-mongo-sanitize');
 const helmet = require('helmet');
-const xss = require("xss-clean");
+// const xss = require("xss-clean");
 // const rateLimit = require('express-rate-limit')
-const hpp = require('hpp');
+// const hpp = require('hpp');
 
 
 //adding socket.io configuration
@@ -61,7 +61,7 @@ app.use(
   })
 )
 // prevent Cross-site Scripting XSS
-app.use(xss());
+// app.use(xss());
 //limit queries per 15mn
 // const limiter = rateLimit({
 //   windowMs: 15 * 60 * 1000, // 15 minutes
@@ -71,7 +71,7 @@ app.use(xss());
 // })
 // app.use(limiter);
 //HTTP Param Pollution
-app.use(hpp());
+// app.use(hpp());
 
 //ROUTES MIDDLEWARE
 app.use('/api', authRoutes);
@@ -83,19 +83,17 @@ __dirname = path.resolve()
 //   res.send(res)
 // })
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../frontend/build')))
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static(path.join(__dirname, '../frontend/build')))
 
-  app.get('*', (req, res) =>
-    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
-  )
-} else {
+//   app.get('*', (req, res) =>
+//     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+//   )
+// } else {
   app.get('/', (req, res) => {
     res.send('API is running....')
   })
-}
-
-
+// }
 
 
 //error middleware
